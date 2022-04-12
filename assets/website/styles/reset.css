@@ -11,7 +11,10 @@
     all: unset;
     display: revert;
 }
-
+body {
+    box-sizing: border-box;
+    /* background-color: black; */
+}
 /* Preferred box-sizing value */
 *,
 *::before,

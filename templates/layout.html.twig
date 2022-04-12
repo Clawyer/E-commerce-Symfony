@@ -15,19 +15,18 @@
 			{% include('./header.html.twig') %}
 		</header>
 
-		<div id="wrapper"> {% block content %}{% endblock %}
-			</div>
+		<main id="wrapper"> {% block content %}{% endblock %}
+
+			</main>
 
 
 			<footer id="footer">
 				{% include('./footer.html.twig') %}
 			</footer>
 			{{ encore_entry_script_tags('app') }}
-			<script type="text/javascript">
-				console.log('ok');
-			</script>
+			<script type="text/javascript"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.2/gsap.min.js" integrity="sha512-kVlGhj2qFy+KBCFuvjBJTGUMxbdqJKs4yK2jh0e0VPhWUPiPC87bzm4THmaaIee3Oj7j6sDpTTgm2EPPiESqBg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 			{% block javascripts %}{% endblock %}
-
 		</body>
 	</html>

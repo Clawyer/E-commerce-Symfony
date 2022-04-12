@@ -4,25 +4,34 @@ $red-dark: #8C0000
 $orange: #FF5F00
 $yellow: #FFBE0F
 $white: #FFF
+$grey: #E2E2E2
+
 
 #header
+  position: fixed
+  top: 0
+  width: 100%
+  z-index: 1
+
+.header--container
   display: flex
   align-items: center
   padding: 0.5rem 2rem
   /* background-color: var(--menuBackgroundColor, #f0f0f0) */
-  box-shadow: var(--menuBoxShadow, 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 1px 2px 0 rgba(0, 0, 0, 0.24))
+  // box-shadow: var(--menuBoxShadow, 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 1px 2px 0 rgba(0, 0, 0, 0.24))
   gap: 0.8rem
 
 
 .brand--name
   font-size: 2rem
-  width: 8rem
   text-transform: uppercase
-  font-weight: 700
+  font-weight: 400
+  letter-spacing: 7px
 
 .logo
   width: 80px
   object-fit: contain
+  transform: translateY(-5px)
 
 
 
@@ -42,7 +51,9 @@ $white: #FFF
   > ol
     display: flex
     justify-content: flex-end
-    gap:2rem
+    gap: 2rem
+    height: 3rem
+    align-items: center
 
     > .menu-item
       width:110px
@@ -75,8 +86,9 @@ $white: #FFF
       text-overflow: ellipsis
       display: block
       color: $black
-      font-weight:700
+      font-weight:500
       font-size:1.3rem
+      text-transform: uppercase
 
     @at-root .sub-menu &
       padding: 0.75rem 0
