@@ -112,8 +112,8 @@ $white: #E6E2DF
     transition: 0.5s
     margin-right: 45px
 
-span
-  transform: skewX(15deg)
+  span
+    transform: skewX(15deg)
 
   &:nth-child(2)
     width: 20px
@@ -154,7 +154,7 @@ path
 
 
 .brand--values
-    height: 200px
+    height: 310px
     background-color: #E6E2DF
     display: flex
     flex-flow: column
@@ -166,3 +166,46 @@ path
     p
         font-weight: 500
         font-size: 1.6rem
+.top--articles-container
+    height: 600px
+    background-size: cover
+    background-position: center
+    background-image: url('../assets/img/background--top.jpg')
+    display: flex
+    justify-content: center
+    gap: 3rem
+    align-items: center
+    .top--articles
+      width: 15%
+      height: 80%
+      background-color: white
+      -webkit-box-shadow: 5px 5px 28px 5px #8C8C8C
+      box-shadow: 5px 5px 28px 5px #8C8C8C
+
+    .top--articles--img
+      width: 100%
+      height: 75%
+      background-size: cover
+      background-position: center
+      background-repeat: no-repeat
+
+    #product1
+      background-image: url('../assets/img/products/product1.webp')
+
+    #product2
+      background-image: url('../assets/img/products/product2.webp')
+
+    #product3
+      background-image: url('../assets/img/products/product3.webp')
+
+    #product4
+      background-image: url('../assets/img/products/product4.webp')
+
+    .top--articles--text
+      display: flex
+      justify-content: center
+      align-items: center
+      gap: 1rem
+      flex-direction: column
+      text-align: center
+      padding: 1rem
