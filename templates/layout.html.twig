@@ -1,0 +1,33 @@
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		{{ encore_entry_link_tags('app') }}
+		{% block stylesheets %}{% endblock %}
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+		<title></title>
+	</head>
+	<body>
+		<header id="header">
+			{% include('./header.html.twig') %}
+		</header>
+
+		<div id="wrapper"> {% block content %}{% endblock %}
+			</div>
+
+
+			<footer id="footer">
+				{% include('./footer.html.twig') %}
+			</footer>
+			{{ encore_entry_script_tags('app') }}
+			<script type="text/javascript">
+				console.log('ok');
+			</script>
+
+			{% block javascripts %}{% endblock %}
+
+		</body>
+	</html>

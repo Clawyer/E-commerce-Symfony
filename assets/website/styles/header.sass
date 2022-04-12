@@ -1,0 +1,193 @@
+$black: #2A363B
+$red: #B20600
+$red-dark: #8C0000
+$orange: #FF5F00
+$yellow: #FFBE0F
+$white: #FFF
+
+#header
+  display: flex
+  align-items: center
+  padding: 0.5rem 2rem
+  /* background-color: var(--menuBackgroundColor, #f0f0f0) */
+  box-shadow: var(--menuBoxShadow, 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 1px 2px 0 rgba(0, 0, 0, 0.24))
+  gap: 0.8rem
+
+
+.brand--name
+  font-size: 2rem
+  width: 8rem
+  text-transform: uppercase
+  font-weight: 700
+
+.logo
+  width: 80px
+  object-fit: contain
+
+
+
+@mixin mobile
+  @media screen and (max-width: 600px)
+    @content
+
+.menu
+  flex-grow:1
+  padding-right: 3rem
+
+  ol
+    list-style-type: none
+    margin: 0 auto
+    padding: 0
+
+  > ol
+    display: flex
+    justify-content: flex-end
+    gap:2rem
+
+    > .menu-item
+      width:110px
+      padding: 0.75rem 0
+
+      &:after
+        content: ''
+        position: absolute
+        width: 4px
+        height: 4px
+        border-radius: 50%
+        bottom: 5px
+        left: calc(50% - 2px)
+        background: $black
+        will-change: transform
+        transform: scale(0)
+        transition: transform 0.2s ease
+
+      &:hover:after
+        transform: scale(1)
+
+  &-item
+    position: relative
+    line-height: 2.5rem
+    text-align: center
+
+    a
+      overflow: hidden
+      white-space: nowrap
+      text-overflow: ellipsis
+      display: block
+      color: $black
+      font-weight:700
+      font-size:1.3rem
+
+    @at-root .sub-menu &
+      padding: 0.75rem 0
+      background: $red
+      opacity: 0
+      transform-origin: bottom
+      animation: enter 0.2s ease forwards
+
+      @for $n from 1 through 3
+        &:nth-child(#{$n})
+          animation-duration: 0.2s + 0.1s * ($n - 1)
+          animation-delay: 0.1s * ($n - 1)
+
+      &:hover
+        background: $red-dark
+
+      a
+        padding: 0 0.75rem
+
+      @include mobile
+        background: $red-dark
+
+  @include mobile
+    position: relative
+
+    &:after
+      content: ''
+      position: absolute
+      top: calc(50% - 2px)
+      right: 1rem
+      width: 30px
+      height: 4px
+      background: $white
+      box-shadow: 0 10px $white, 0 -10px $white
+
+    > ol
+      display: none
+      background: $red
+      flex-direction: column
+      justify-content: center
+      height: 100vh
+      animation: fade 0.2s ease-out
+
+      > .menu-item
+        flex: 0
+        opacity: 0
+        animation: enter 0.3s ease-out forwards
+
+        @for $n from 1 through 5
+          &:nth-child(#{$n})
+            animation-delay: 0.1s * ($n - 1)
+
+        & + .menu-item
+          margin-top: 0.75rem
+
+        &:after
+          left: auto
+          right: 1rem
+          bottom: calc(50% - 2px)
+
+        &:hover
+          z-index: 1
+
+    &:hover
+      > ol
+        display: flex
+
+      &:after
+        box-shadow: none
+
+.sub-menu
+  position: absolute
+  width: 100%
+  top: 100%
+  left: 0
+  display: none
+  z-index: 1
+
+  @at-root .menu-item:hover > &
+    display: block
+
+  @include mobile
+    width: 100vw
+    left: -2rem
+    top: 50%
+    transform: translateY(-50%)
+
+html, body
+  font-size: 16px
+  font-family: 'Oswald', sans-serif
+  margin: 0
+
+*
+  box-sizing: border-box
+
+  &:before, &:after
+    box-sizing: inherit
+
+a
+  text-decoration: none
+
+@keyframes enter
+  from
+    opacity: 0
+    transform: scaleY(0.98) translateY(10px)
+  to
+    opacity: 1
+    transform: none
+
+@keyframes fade
+  from
+    opacity: 0
+  to
+    opacity: 1
