@@ -1,11 +1,11 @@
-$yellow: #ffeb57
 $dark: #fff
-$red: #B20600
-$red-dark: #A00D16
+$red: #e60000
+$red-dark: #cc0000
+$white: #E6E2DF
 
 
 #hero
-    height: 100vh
+    height: 99vh
     min-height: 500px
     display: flex
     text-align: center
@@ -19,7 +19,7 @@ $red-dark: #A00D16
         top: 0
 
     #hero__bg-img
-        height:90%
+        height:100%
         background-image: url("../assets/img/hero_bg_5.jpg")
         background-position: 0 35%
         background-size: cover
@@ -52,16 +52,13 @@ $red-dark: #A00D16
 
 
     #hero__bg1
-        height: 80%
+        height: 99.8%
         background-color: $red-dark
 
     #hero__bg2
-        height: 90%
-        background-color: $red-dark
+        height: 99.8%
+        background-color: $red
 
-    #hero__bg3
-        height: 100%
-        background-color: white
 
 
 
@@ -69,9 +66,16 @@ $red-dark: #A00D16
     width: 100%
     font-size: 2rem
     color : white
-    margin-top: 15%
+    margin-top: 40vh
     width: 50%
     margin-left: 50%
+    height: 100px
+
+    h2
+        text-shadow: #4d4c4c 1px 1px
+        span
+            display: block
+            transform: none
 
 .btn--wrapper
     display: flex
@@ -86,7 +90,7 @@ $red-dark: #A00D16
   font-family: 'Poppins', sans-serif
   font-size: 1.5rem
   color: white
-  background: $red-dark
+  background: $red
   transition: 1s
   box-shadow: 6px 6px 0 black
   transform: skewX(-15deg)
@@ -147,3 +151,18 @@ path
 
   100%
     fill: white
+
+
+.brand--values
+    height: 200px
+    background-color: #E6E2DF
+    display: flex
+    flex-flow: column
+    justify-content: center
+    align-items: center
+    gap: 1rem
+    text-align: justify
+
+    p
+        font-weight: 500
+        font-size: 1.6rem
