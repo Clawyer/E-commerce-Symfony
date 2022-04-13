@@ -6,8 +6,8 @@
  */
 
 // any CSS you import will output into a single css file (app.css in this case)
-// import "./website/styles/reset.css";
-import "./website/styles/footer.css";
+import "./website/styles/reset.css";
+import "./website/styles/footer.sass";
 require("./website/styles/header.sass");
 
 import "./bootstrap";

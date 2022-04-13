@@ -7,14 +7,13 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 
-class ProductsController extends AbstractController
+class AccountController extends AbstractController
 {
     /**
-     * @Route("/products", name="products")
+     * @Route("/account", name="account")
      */
-    public function products(): Response
+    public function account(): Response
     {
-
-        return $this->render('products/products.html.twig');
+        return $this->render('account/account.html.twig');
     }
 }

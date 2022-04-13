@@ -1,0 +1,117 @@
+{% extends "layout.html.twig" %}
+{% block title %}
+	Products
+{% endblock %}
+
+{% block stylesheets %}
+	{{ encore_entry_link_tags('products') }}
+{% endblock %}
+
+
+{% block content %}
+	<div class="filters">
+		<span class="filter" data-filter="male">MALE</span>
+		<span class="filter" data-filter="female">FEMALE</span>
+		<span class="filter" data-filter="all">ALL</span>
+	</div>
+	<section class="section--articles-container">
+		<div class="articles">
+			<div class="articles--img 0" id="product1"></div>
+			<div class="articles--text">
+				<h2>
+					Robe olive
+				</h2>
+				<span>
+					35.00 €
+				</span>
+			</div>
+		</div>
+		<div class="articles">
+			<div class="articles--img 0" id="product2"></div>
+
+			<div class="articles--text">
+				<h2>
+					Robe grise
+				</h2>
+				<span>
+					25.00 €
+				</span>
+			</div>
+		</div>
+
+		<div class="articles">
+			<div class="articles--img 1" id="product3"></div>
+
+			<div class="articles--text">
+				<h2>
+					T-shirt gris
+				</h2>
+				<span>
+					25.00 €
+				</span>
+			</div>
+		</div>
+		<div class="articles">
+			<div class="articles--img 1" id="product4"></div>
+
+			<div class="articles--text">
+				<h2>
+					T-shirt Navy
+				</h2>
+				<span>
+					25.00 €
+				</span>
+			</div>
+		</div>
+
+		<div class="articles">
+			<div class="articles--img 0" id="product1"></div>
+			<div class="articles--text">
+				<h2>
+					Robe olive
+				</h2>
+				<span>
+					35.00 €
+				</span>
+			</div>
+		</div>
+		<div class="articles">
+			<div class="articles--img 0" id="product2"></div>
+
+			<div class="articles--text">
+				<h2>
+					Robe grise
+				</h2>
+				<span>
+					25.00 €
+				</span>
+			</div>
+		</div>
+		<div class="articles">
+			<div class="articles--img 1" id="product3"></div>
+
+			<div class="articles--text">
+				<h2>
+					T-shirt gris
+				</h2>
+				<span>
+					25.00 €
+				</span>
+			</div>
+		</div>
+		<div class="articles">
+			<div class="articles--img 1" id="product4"></div>
+			<div class="articles--text">
+				<h2>
+					T-shirt Navy
+				</h2>
+				<span>
+					25.00 €
+				</span>
+			</div>
+		</div>
+	</section>
+{% endblock %}
+{% block javascripts %}
+	{{ encore_entry_script_tags('products') }}
+{% endblock %}

@@ -1,28 +1,18 @@
 <div class="header--container">
-	<img class="logo" src="./assets/img/logo_2.png" alt="logo">
+	<a href={{ path('home')}}><img class="logo" src="./assets/img/logo_2.png" alt="logo"></a>
 	<h1 class="brand--name">wild fire</h1>
 	<nav class="menu">
 		<ol>
 			<li class="menu-item">
-				<a href="#0">Home</a>
+				<a href={{ path('home')}}>Home</a>
 			</li>
 			<li class="menu-item">
-				<a href="#0">Products</a>
-				<ol class="sub-menu">
-					<li class="menu-item">
-						<a href="#0">Male</a>
-					</li>
-					<li class="menu-item">
-						<a href="#0">Female</a>
-					</li>
-				</ol>
+				<a href={{ path('products')}}>Products</a>
 			</li>
 			<li class="menu-item">
-				<a href="#0">Contact</a>
+				<a href={{ path('account')}}>Account</a>
 			</li>
-			<li class="menu-item">
-				<a href="#0">Account</a>
-			</li>
+
 		</ol>
 	</nav>
 </div>

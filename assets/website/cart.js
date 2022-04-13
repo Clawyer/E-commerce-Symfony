@@ -1,1 +1,1 @@
-import "./styles/cart.css"
+import "./styles/cart.sass"

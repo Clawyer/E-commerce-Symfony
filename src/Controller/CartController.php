@@ -12,7 +12,7 @@ class CartController extends AbstractController
     /**
      * @Route("/cart", name="cart")
      */
-    public function home(): Response
+    public function cart(): Response
     {
 
         return $this->render('cart/cart.html.twig');
