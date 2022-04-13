@@ -1,7 +1,10 @@
 $dark: #fff
-$red: #e60000
-$red-dark: #cc0000
+$red: #a10d0d
+$red-dark: rgbq(204, 0, 0,0.7)
 $white: #E6E2DF
+
+#wrapper
+    background-color: black
 
 
 #hero
@@ -11,10 +14,11 @@ $white: #E6E2DF
     text-align: center
     position: relative
 
+
     .hero__bg
         width: 100%
         position: absolute
-        z-index: -1
+        // z-index: -1
         left: 0
         top: 0
 
@@ -24,7 +28,7 @@ $white: #E6E2DF
         background-position: 0 35%
         background-size: cover
         background-repeat: no-repeat
-        /* transform: scaleX(-1) */
+        // transform: scaleX(-1)
 
         @mixin duotone
                 content: ''
@@ -167,7 +171,7 @@ path
         font-weight: 500
         font-size: 1.6rem
 .top--articles-container
-    height: 600px
+    height: 800px
     background-size: cover
     background-position: center
     background-image: url('../assets/img/background--top.jpg')
@@ -177,10 +181,16 @@ path
     align-items: center
     .top--articles
       width: 15%
-      height: 80%
+      height: 55%
       background-color: white
       -webkit-box-shadow: 5px 5px 28px 5px #8C8C8C
       box-shadow: 5px 5px 28px 5px #8C8C8C
+      border-radius: 10px
+      cursor: pointer
+
+      &:hover
+        transform: translateY(-15px)
+        transition: 0.5s
 
     .top--articles--img
       width: 100%
@@ -188,6 +198,7 @@ path
       background-size: cover
       background-position: center
       background-repeat: no-repeat
+      border-radius: 10px 10px 0px 0
 
     #product1
       background-image: url('../assets/img/products/product1.webp')
