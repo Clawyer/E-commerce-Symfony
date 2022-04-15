@@ -15,18 +15,88 @@
 			{% include('./header.html.twig') %}
 		</header>
 
-		<main id="wrapper">
-		{% block content %}{% endblock %}
-		</main>
+		<main id="wrapper"> {% block content %}{% endblock %}
+			</main>
 
+			{# <button type="button" name="button" class="modal-sign">MODAL</button> #}
+
+
+			<!-- MODAL LOGIN -->
+			<div class="sign-in-modal">
+				<div class="inner--sign-in-modal">
+					<div class="val-info">
+						<span class="overlay sign-in-side"></span>
+						<div class="tab tab-sign-in active">
+							Login
+						</div>
+						<div class="tab tab-sign-up">
+							Register
+						</div>
+					</div>
+					<div class="content-info">
+						<div class="content-sign-in">
+							<div class="wrap--content-sign-in">
+								<div class="greetings">
+									Welcome back, be sure to login in order to proceed.
+								</div>
+								<div class="wrong">
+								Wrong password or email, try again
+								</div>
+								<form class="" action="index.html" method="post">
+
+									<div class="input-control">
+										<input type="email" name="" value="" placeholder="Email" required>
+									</div>
+									<div class="input-control">
+										<input type="password" name="" value="" placeholder="Password" required>
+									</div>
+									<button type="button" class="login--btn" name="button">
+										Login
+									</button>
+								</form>
+							</div>
+						</div>
+						<div class="content-sign-up">
+							<div class="wrap--content-sign-up">
+								<div class="greetings">
+									Welcome
+									<span class="greetings-name"></span>
+									<span class="greetings-surname"></span>
+								</div>
+
+								<form class="" action="index.html" method="post">
+									<div class="input-control">
+										<input type="text" name="firstname" value="" class="input-firstname" placeholder="First Name">
+									</div>
+									<div class="input-control">
+										<input type="text" name="lastname" value="" class="input-lastname" placeholder="Last Name">
+									</div>
+									<div class="input-control">
+										<input type="email" name="email" value="" placeholder="Email" required>
+									</div>
+									<div class="input-control">
+										<input type="password" name="password" value="" placeholder="Password" required>
+									</div>
+									<button type="button" class="register--btn" name="button">
+										Register
+									</button>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			{# <p id="log"></p> #}
 
 			<footer id="footer">
 				{% include('./footer.html.twig') %}
 			</footer>
-			{{ encore_entry_script_tags('app') }}
-			<script type="text/javascript"></script>
-			<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.2/gsap.min.js" integrity="sha512-kVlGhj2qFy+KBCFuvjBJTGUMxbdqJKs4yK2jh0e0VPhWUPiPC87bzm4THmaaIee3Oj7j6sDpTTgm2EPPiESqBg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+			{{ encore_entry_script_tags('app') }}
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.2/gsap.min.js" integrity="sha512-kVlGhj2qFy+KBCFuvjBJTGUMxbdqJKs4yK2jh0e0VPhWUPiPC87bzm4THmaaIee3Oj7j6sDpTTgm2EPPiESqBg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+			<script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
 			{% block javascripts %}{% endblock %}
 		</body>
 	</html>

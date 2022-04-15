@@ -11,7 +11,8 @@
 
 		<div class="profil">
 
-			<p>Hello from this side</p>
+			<h3>Hello</h3>
+
 		</div>
 		<div class="settings">
 			<ul>
@@ -45,7 +46,7 @@
 				<li>
 					<i class="fa-solid fa-circle-question"></i>Need help ?</li>
 
-				<li>
+				<li class="sign-out">
 					<i class="fa-solid fa-arrow-right-from-bracket"></i>Sign out</li>
 
 			</ul>
@@ -69,5 +70,9 @@
 
 	</article>
 
+{% endblock %}
 
+
+{% block javascripts %}
+	{{ encore_entry_script_tags('account') }}
 {% endblock %}
