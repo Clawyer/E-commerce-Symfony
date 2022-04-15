@@ -7,82 +7,51 @@
 	{{ encore_entry_link_tags('cart') }}
 {% endblock %}
 {% block content %}
+<div class="cart--title">
+	<h1>My Bag</h1>
+	<span>Items are reserved for 60 minutes !</span>
+</div>
 
-
-	<h1>Shopping Cart</h1>
-
-	<div class="shopping-cart">
-
-		<div class="column-labels">
-			<label class="product-image">Image</label>
-			<label class="product-details">Product</label>
-			<label class="product-price">Price</label>
-			<label class="product-quantity">Quantity</label>
-			<label class="product-removal">Remove</label>
-			<label class="product-line-price">Total</label>
+	<div class="basket">
+		<div class="basket-labels">
+			<ul>
+				<li class="item item-heading">Item</li>
+				<li class="price">Price</li>
+				<li class="quantity">Quantity</li>
+				<li class="subtotal">Subtotal</li>
+			</ul>
 		</div>
 
-		<div class="product">
-			<div class="product-image">
-				<img src="https://s.cdpn.io/3/dingo-dog-bones.jpg">
-			</div>
-			<div class="product-details">
-				<div class="product-title">Dingo Dog Bones</div>
-			</div>
-			<div class="product-price">12.99</div>
-			<div class="product-quantity">
-				<input type="number" value="2" min="1">
-			</div>
-			<div class="product-removal">
-				<button class="remove-product">
-					Remove
-				</button>
-			</div>
-			<div class="product-line-price">25.98</div>
-		</div>
-
-		<div class="product">
-			<div class="product-image">
-				<img src="https://s.cdpn.io/3/large-NutroNaturalChoiceAdultLambMealandRiceDryDogFood.png">
-			</div>
-			<div class="product-details">
-				<div class="product-title">Nutro™ Adult Lamb and Rice Dog Food</div>
-				<p class="product-description">Who doesn't like lamb and rice? We've all hit the halal cart at 3am while quasi-blackout after a night of binge drinking in Manhattan. Now it's your dog's turn!</p>
-			</div>
-			<div class="product-price">45.99</div>
-			<div class="product-quantity">
-				<input type="number" value="1" min="1">
-			</div>
-			<div class="product-removal">
-				<button class="remove-product">
-					Remove
-				</button>
-			</div>
-			<div class="product-line-price">45.99</div>
-		</div>
-
-		<div class="totals">
-			<div class="totals-item">
-				<label>Subtotal</label>
-				<div class="totals-value" id="cart-subtotal">71.97</div>
-			</div>
-			<div class="totals-item">
-				<label>Tax (5%)</label>
-				<div class="totals-value" id="cart-tax">3.60</div>
-			</div>
-			<div class="totals-item">
-				<label>Shipping</label>
-				<div class="totals-value" id="cart-shipping">15.00</div>
-			</div>
-			<div class="totals-item totals-item-total">
-				<label>Grand Total</label>
-				<div class="totals-value" id="cart-total">90.57</div>
-			</div>
-		</div>
-
-		<button class="checkout">Checkout</button>
 
 	</div>
+	<aside>
+		<div class="summary">
+			<div class="summary-total-items">
+				<span class="total-items"></span>
+				Items in your Bag</div>
+			<div class="summary-subtotal">
+				<div class="subtotal-title">Subtotal</div>
+				<div class="subtotal-value final-value" id="basket-subtotal"></div>
+				<div class="basket-module">
+					<label for="promo-code">Enter a promotional code</label>
+					<input id="promo-code" type="text" name="promo-code" maxlength="5" class="promo-code-field">
+					<button class="promo-code-cta">Apply</button>
+				</div>
+
+				<div class="summary-promo hide">
+					<div class="promo-title">Promotion</div>
+					<div class="promo-value final-value" id="basket-promo"></div>
+				</div>
+			</div>
+			<div class="summary-total">
+				<div class="total-title">Total</div>
+				<div class="total-value final-value" id="basket-total"></div>
+			</div>
+			<div class="summary-checkout">
+				<button class="checkout-cta">Go to Secure Checkout</button>
+			</div>
+		</div>
+	</aside>
 
 
 {% endblock %}

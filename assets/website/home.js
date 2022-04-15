@@ -35,3 +35,5 @@ tl.from(".hero__bg--stagger", {
 // function runThis() {
 //   tl.restart();
 // }
+
+$(".top--articles").click(() => (location.href = "/products"));

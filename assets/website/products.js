@@ -1,7 +1,6 @@
 import "./styles/products.sass";
 
 
-
 const products = document.getElementsByClassName("articles");
 for (let i = 0; i < 8; i++) {
   products[i].children[0].classList[1] == "0"

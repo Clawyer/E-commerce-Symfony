@@ -10,12 +10,11 @@ import "./website/styles/reset.css";
 import "./styles/app.scss";
 import "./website/styles/footer.sass";
 require("./website/styles/header.sass");
-
 import "./bootstrap";
 
 // MODAL LOGIN
 
-$(".articles--text span").after(
+$(".articles--text h2 + span ").after(
   `<button class="addtocart">
 					<div class="pretext">
           ADD TO CART
@@ -99,8 +98,9 @@ const register = (e) => {
 
   let old = JSON.parse(localStorage.getItem("login")) || [];
   let new_data = old.concat([infos_arr]);
-
   localStorage.setItem("login", JSON.stringify(new_data));
+  localStorage.setItem("active", JSON.stringify(infos_arr));
+  location.href = "/account"
 };
 
 const login = (e) => {
@@ -143,30 +143,52 @@ function getUniqueListBy(arr, key) {
   return [...new Map(arr.map((item) => [item[key], item])).values()];
 }
 
+const updateQty = (item, qty) => {
+  let old = findItem(item);
+  old.quantity += qty;
+  return old;
+};
+
+const findItem = (item) => {
+  let arr = JSON.parse(localStorage.getItem("cart")) || [];
+  return arr.find((i) => i.label === item.label);
+  // return typeof k !== "undefined" ? true : false
+};
+// console.log(JSON.parse(localStorage.getItem("cart")).concat(updateQty(item,5)));
+
+const empty = (array) => typeof array === "undefined" || array.length == 0;
+
 const handleCart = (e) => {
   let item = e.target.closest(".articles--text");
-  let name = item.children[0].outerText;
-  let price = item.children[1].outerText;
+  let brand = $(item).find(".brand")[0].outerText;
+  let name = item.children[0].outerText.split(brand)[1].trim();
+  let price = item.children[1].outerText.split(" ")[0];
   let cart = [];
+  let old = JSON.parse(localStorage.getItem("cart")) || [];
   let new_item = false;
 
   let infos_arr = {
     label: name,
+    brand: brand,
     price: price,
-    number: 1,
+    quantity: 1,
   };
-  let old = JSON.parse(localStorage.getItem("cart")) || [];
 
-  for (let i = 0; i < old.length; i++) {
-    if (infos_arr.label == old[i].label) {
-      old[i].number++;
-    } else {
-      new_item = true;
-    }
-  }
-  !new_item
-    ? (cart = getUniqueListBy(old.reverse(), "label"))
-    : (cart = getUniqueListBy(old.concat([infos_arr]).reverse(), "label"));
+  new_item = typeof findItem(infos_arr) !== "undefined" ? false : true;
+
+  // IF TRUE ? old + new quantity item ELSE OLD
+  new_item == true
+    ? (old = old.concat(infos_arr))
+    : (old = old.concat([updateQty(infos_arr, 1)]));
+
+  cart = getUniqueListBy(old.sort(), "label");
+
+  // OLD VERSION
+  // !new_item
+  //   ? (cart = getUniqueListBy(old.reverse(), "label"))
+  //   : typeof old !== "undefined" && old.length > 0
+  //   ? (cart = getUniqueListBy(old.concat([infos_arr]).reverse(), "label"))
+  //   : (cart = [infos_arr]);
 
   localStorage.setItem("cart", JSON.stringify(cart));
 
@@ -174,3 +196,5 @@ const handleCart = (e) => {
 };
 
 button.click(handleCart);
+
+export { updateQty, findItem, getUniqueListBy };
