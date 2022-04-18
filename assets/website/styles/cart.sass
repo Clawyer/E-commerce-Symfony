@@ -4,19 +4,20 @@ $red-dark: #8C0000
 body
   height: 100%
   background-color: #eee
+.cart--container
+  width: 1020px
+  box-shadow: 0px 6px 15px grey
+  min-height: 530px
+  margin: 1rem auto
+  padding: 2rem 1rem
 
 #wrapper
   clear: both
   font-size: 1rem
-  margin: 0 auto
   overflow: hidden
-  padding: 2rem 1rem
-  width: 1020px
   position: relative
   top: 200px
-  box-shadow: 0px 6px 15px grey
-  min-height: 530px
-
+  height: 100%
   strong
     font-weight: bold
 
@@ -61,11 +62,8 @@ img, .basket-module, .basket-labels, .basket-product
 .price:after, .subtotal:after, .subtotal-value:after, .total-value:after, .promo-value:after
   content: '€'
 
-
 .hide
   display: none
-
-
 
 .basket, aside
   padding: 0 1rem
@@ -182,13 +180,14 @@ li
 
 aside
   float: right
-  position: relative
   width: 30%
+  position: relative
+
+
 
 .summary
   border: 1px solid #aaa
   padding: 1rem
-  position: fixed
   width: 250px
   height: 385px
   -webkit-box-sizing: border-box
